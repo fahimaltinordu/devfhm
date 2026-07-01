@@ -1,0 +1,10 @@
+<svg viewBox="0 0 320 640" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="640" fill="#0a0a0d"/>
+  <rect x="0" y="0" width="320" height="64" fill="#1c1c20"/>
+  <path d="M24 30 L64 30 L72 48 L80 30 L120 30 L108 42 L88 42 L80 60 L76 42 L48 42 Z" fill="#e8262c" transform="scale(0.6) translate(16,10)"/>
+  <text x="160" y="40" font-family="'Rajdhani', sans-serif" font-size="18" font-weight="700" letter-spacing="1" fill="#f2f2f4" text-anchor="middle">EKRAN GÖRÜNTÜSÜ</text>
+  <rect x="24" y="90" width="272" height="220" rx="16" fill="#1c1c20"/>
+  <rect x="24" y="330" width="272" height="140" rx="16" fill="#1c1c20"/>
+  <circle cx="160" cy="600" r="6" fill="#8b8b93"/>
+  <text x="160" y="330" font-family="'JetBrains Mono', monospace" font-size="13" letter-spacing="1.5" fill="#8b8b93" text-anchor="middle">GÖRSEL 2</text>
+</svg>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>devFhm — Mobil Uygulama Stüdyosu</title>
+<meta name="description" content="devFhm tarafından geliştirilen mobil uygulamalar, Google Play indirme bağlantıları ve stüdyo hakkında bilgiler.">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ ÜST BANT / NAV ============ -->
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <img src="assets/logo-c-bg.png" alt="devFhm" class="brand-logo">
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#apps">Uygulamalar</a>
+      <a href="#about">Hakkımızda</a>
+      <a href="#contact">İletişim</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-chevrons" aria-hidden="true">
+    <img src="assets/icon-bg.png" alt="">
+  </div>
+  <div class="wrap hero-inner">
+    <p class="eyebrow">MOBİL UYGULAMA STÜDYOSU</p>
+    <h1>Fikirlerimizi<br><span>kodlayarak</span> şekillendiriyoruz.</h1>
+    <p class="hero-sub">devFhm; günlük hayatı kolaylaştıran, modern arayüzler ve yüksek performanslı native mobil uygulamalar geliştirir. Aşağıda geliştirdiğimiz uygulamaları inceleyebilir, detaylarına ve Google Play sayfalarına ulaşabilirsiniz.</p>
+    <div class="hero-actions">
+      <a href="#apps" class="btn btn-primary">Uygulamaları Gör</a>
+      <a href="#about" class="btn btn-ghost">Hakkımızda</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UYGULAMALAR ============ -->
+<section class="apps-section" id="apps">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">UYGULAMALAR</span>
+      <h2>Geliştirdiğimiz Uygulamalar</h2>
+      <!-- <p class="section-desc">Bir karta tıklayarak ekran görüntülerini, açıklamayı ve Google Play indirme bağlantısını görüntüleyebilirsiniz.</p> -->
+    </div>
+
+    <div class="app-grid" id="appGrid">
+      <!-- Kartlar js/script.js içindeki APPS dizisinden oluşturulur -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ HAKKIMIZDA ============ -->
+<section class="about-section" id="about">
+  <div class="wrap about-inner">
+    <div class="about-text">
+      <span class="section-tag">HAKKIMIZDA</span>
+      <h2>devFhm kimdir?</h2>
+      <p>devFhm, mobil platformlar için odaklı ve işlevsel uygulamalar üreten bağımsız bir geliştirme stüdyosudur. Karmaşayı sadeleştirmeyi, her uygulamayı tek bir işi çok iyi yapacak şekilde tasarlamayı ilke edindik.</p>
+      <p>Kullanıcı geri bildirimlerini önemsiyor, uygulamalarımızı düzenli olarak güncelleyerek daha hızlı ve daha kararlı hale getiriyoruz.</p>
+      <div class="about-stats">
+        <div class="stat">
+          <span class="stat-num">1+</span>
+          <span class="stat-label">Yayınlanan Uygulama</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">Google Play</span>
+          <span class="stat-label">Resmi Dağıtım Platformu</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">TR</span>
+          <span class="stat-label">İstanbul Merkezli</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual" aria-hidden="true">
+      <img src="assets/icon.png" alt="" class="about-mark">
+    </div>
+  </div>
+</section>
+
+<!-- ============ İLETİŞİM / SOSYAL ============ -->
+<section class="contact-section" id="contact">
+  <div class="wrap contact-inner">
+    <span class="section-tag">İLETİŞİM</span>
+    <h2>Bize Ulaşın</h2>
+    <p class="section-desc">Sorularınız, öneri ya da iş birlikleriniz için bize sosyal medyadan veya e-posta ile ulaşabilirsiniz.</p>
+
+    <div class="contact-grid">
+
+      <a href="https://www.instagram.com/digitai.resmi" class="contact-card" target="_blank" rel="noopener">
+        <span class="contact-icon" data-icon="instagram"></span>
+        <span class="contact-label">Instagram</span>
+      </a>
+
+      <a href="https://github.com/fahimaltinordu" class="contact-card" target="_blank" rel="noopener">
+        <span class="contact-icon" data-icon="github"></span>
+        <span class="contact-label">GitHub</span>
+      </a>
+
+      <a href="#" class="contact-card" target="_blank" rel="noopener">
+        <span class="contact-icon" data-icon="playstore"></span>
+        <span class="contact-label">Google Play</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <img src="assets/logo-c-bg.png" alt="devFhm" class="footer-logo">
+    <p>&copy; <span id="year"></span> devFhm. Tüm hakları saklıdır.</p>
+  </div>
+</footer>
+
+<!-- ============ UYGULAMA DETAY MODALI ============ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Kapat">&times;</button>
+
+    <div class="modal-head">
+      <img src="" alt="" class="modal-icon" id="modalIcon">
+      <div>
+        <h3 id="modalTitle"></h3>
+        <p class="modal-tagline" id="modalTagline"></p>
+        <span class="modal-tag" id="modalTag"></span>
+      </div>
+
+    </div>
+    <div class="modal-footer">
+      <a href="#" id="modalPlayLink" class="google-play-link" target="_blank" rel="noopener">
+        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play'de Alın" class="google-play-badge">
+      </a>
+    </div>
+    <div class="modal-shots" id="modalShots"></div>
+
+    <div class="modal-body">
+      <h4>Açıklama</h4>
+      <p id="modalDesc"></p>
+    </div>
+
+    
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
