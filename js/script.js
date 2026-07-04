@@ -7,7 +7,8 @@ const APPS = [
   {
     id: "app-01",
     name: "MelaTone",
-    tag: "Üretkenlik",
+    tag1: "Health & Fitness",
+    tag2: "Mind & Body",
     color: "#7c3fe4",
     tagline: "Luxury Sleep & Meditation App",
     description: "MelaTone, uyku ve meditasyon deneyimini geliştirmek için tasarlanmış bir mobil uygulamadır. Kullanıcıların rahatlamasına, stresini azaltmasına ve daha iyi bir uyku düzeni oluşturmasına yardımcı olur. Uygulama, çeşitli meditasyon sesleri sunar ve reklam kesintisi olmadan kullanıcıların odaklanmasını sağlar. Ayrıca, kullanıcıların kendi uyku ve meditasyon rutinlerini oluşturmasına olanak tanır.",
@@ -54,7 +55,8 @@ function renderAppCards() {
         <div class="app-icon"><img src="${app.icon}" alt="${app.name} simgesi" loading="lazy"></div>
         <div>
           <div class="app-name">${app.name}</div>
-          <span class="app-tag">${app.tag}</span>
+          <span class="app-tag">${app.tag1}</span>
+          <span class="app-tag">${app.tag2}</span>
         </div>
       </div>
       <p class="app-tagline">${app.tagline}</p>
@@ -83,7 +85,8 @@ function openModal(id) {
   document.getElementById("modalIcon").alt = `${app.name} simgesi`;
   document.getElementById("modalTitle").textContent = app.name;
   document.getElementById("modalTagline").textContent = app.tagline;
-  document.getElementById("modalTag").textContent = app.tag;
+  document.getElementById("modalTag1").textContent = app.tag1;
+  document.getElementById("modalTag2").textContent = app.tag2;
   document.getElementById("modalDesc").textContent = app.description;
 
   const shotsWrap = document.getElementById("modalShots");
