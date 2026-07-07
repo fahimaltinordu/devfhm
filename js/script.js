@@ -21,22 +21,23 @@ const APPS = [
     ],
     playStoreUrl: "#"
   },
-  // {
-  //   id: "app-02",
-  //   name: "MelaTone",
-  //   tag: "Üretkenlik",
-  //   color: "#26e863",
-  //   tagline: "Kısa ve çarpıcı bir uygulama açıklaması buraya gelecek.",
-  //   description: "Bu alana uygulamanızın detaylı açıklamasını yazabilirsiniz. Neler yaptığını, hangi problemi çözdüğünü ve öne çıkan özelliklerini birkaç cümleyle anlatın.",
-  //   icon: "assets/apps/app-02.png",
-  //   screenshots: [
-  //     "assets/screenshots/app-02-1.png",
-  //     "assets/screenshots/app-02-2.png",
-  //     "assets/screenshots/app-02-3.png",
-  //     "assets/screenshots/app-02-4.png"
-  //   ],
-  //   playStoreUrl: "#"
-  // },
+  {
+    id: "app-02",
+    name: "Yüzleşme: Cevaplar Kitabı",
+    tag1: "Eğlence",
+    tag2: "Falcılık",
+    color: "#dab25f",
+    tagline: "Yüzleşmeye hazır mısın?",
+    description: "Hayatın karmaşasında kaybolduğunda, bir karar eşiğinde durduğunda ya da sadece ruhunun derinliklerinde bir rehber aradığında 'Yüzleşme: Cevaplar Kitabı' yanında. Bu uygulama, sıradan bir yanıt motoru değil; senin enerjinle ve o anki niyetinle şekillenen dijital bir bilgelik rehberidir.",
+    icon: "assets/apps/app-02.png",
+    screenshots: [
+      "assets/screenshots/app-02-1.png",
+      "assets/screenshots/app-02-2.png",
+      "assets/screenshots/app-02-3.png",
+      "assets/screenshots/app-02-4.png"
+    ],
+    playStoreUrl: "#"
+  },
   
 ];
 
