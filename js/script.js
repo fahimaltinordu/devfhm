@@ -19,13 +19,13 @@ const APPS = [
       "assets/screenshots/app-01-3.png",
       "assets/screenshots/app-01-4.png"
     ],
-    playStoreUrl: "#"
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.devfhm.melatone"
   },
   {
     id: "app-02",
     name: "Yüzleşme: Cevaplar Kitabı",
     tag1: "Eğlence",
-    tag2: "Falcılık",
+    tag2: "Falcılık & Astroloji",
     color: "#dab25f",
     tagline: "Yüzleşmeye hazır mısın?",
     description: "Hayatın karmaşasında kaybolduğunda, bir karar eşiğinde durduğunda ya da sadece ruhunun derinliklerinde bir rehber aradığında 'Yüzleşme: Cevaplar Kitabı' yanında. Bu uygulama, sıradan bir yanıt motoru değil; senin enerjinle ve o anki niyetinle şekillenen dijital bir bilgelik rehberidir.",
@@ -36,7 +36,24 @@ const APPS = [
       "assets/screenshots/app-02-3.png",
       "assets/screenshots/app-02-4.png"
     ],
-    playStoreUrl: "#"
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.devfhm.yuzlesme"
+  },
+  {
+    id: "app-03",
+    name: "Manifest Defteri",
+    tag1: "Kişisel Gelişim",
+    tag2: "Yaşam tarzı",
+    color: "#9344bb",
+    tagline: "Kozmik frekanslarla günlük 3-6-9 manifest ritüeli ve kişisel defterin",
+    description: "Manifest Defteri, çekim yasasına inanan ve niyetlerini evrene bilinçli şekilde göndermek isteyenler için tasarlanmış kozmik bir günlük ritüel ve kişisel manifest defteri uygulamasıdır. Kendi olumlamalarını, dileklerini ve şükran notlarını kaydet. Zamanla oluşan kayıtların, geçmiş sekmesinde arama ve filtreleme özellikleriyle kolayca gözden geçirilebilir. Dilersen özel notlarını PIN kilidiyle koru — sadece sen görebilirsin.",
+    icon: "assets/apps/app-03.png",
+    screenshots: [
+      "assets/screenshots/app-03-1.jpg",
+      "assets/screenshots/app-03-2.jpg",
+      "assets/screenshots/app-03-3.jpg",
+      "assets/screenshots/app-03-4.jpg"
+    ],
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.devfhm.manifestdefteri"
   },
   
 ];
