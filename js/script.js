@@ -55,6 +55,23 @@ const APPS = [
     ],
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.devfhm.manifestdefteri"
   },
+  {
+    id: "app-04",
+    name: "Passaparola - Kelime Oyunu",
+    tag1: "Oyun",
+    tag2: "Kelime & Bulmaca",
+    color: "#ef7a27",
+    tagline: "Türkçenin en eğlenceli kelime oyunu! cevapları bil, zamana karşı yarış.",
+    description: "Passaparola; kelime dağarcığını geliştirmek, reflekslerini test etmek ve arada eğlenceli vakit geçirmek isteyen herkes için tasarlandı. Tek başına oynayarak kendi rekorlarını kır, istatistiklerinle gelişimini takip et!",
+    icon: "assets/apps/app-04.png",
+    screenshots: [
+      "assets/screenshots/app-04-1.jpg",
+      "assets/screenshots/app-04-2.jpg",
+      "assets/screenshots/app-04-3.jpg",
+      "assets/screenshots/app-04-4.jpg"
+    ],
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.devfhm.passaparola"
+  },
   
 ];
 
