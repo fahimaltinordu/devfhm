@@ -72,6 +72,23 @@ const APPS = [
     ],
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.devfhm.passaparola"
   },
+  {
+    id: "app-05",
+    name: "Yapyap - Puzzles",
+    tag1: "Oyun",
+    tag2: "Puzzle & Zeka",
+    color: "#ef27bd",
+    tagline: "Kendi fotoğraflarından jigsaw bulmacalar oluştur veya sürekli büyüyen hikaye modu ile eğlenceli vakit geçir.",
+    description: "Yapyap - Puzzles; kendi fotoğraflarınızdan jigsaw bulmacalar oluşturmak ve sürekli büyüyen hikaye modu ile eğlenceli vakit geçirmek isteyen herkes için tasarlandı. Tek başına oynayarak kendi rekorlarını kır, istatistiklerinle gelişimini takip et!",
+    icon: "assets/apps/app-05.png",
+    screenshots: [
+      "assets/screenshots/app-05-1.jpg",
+      "assets/screenshots/app-05-2.jpg",
+      "assets/screenshots/app-05-3.jpg",
+      "assets/screenshots/app-05-4.jpg"
+    ],
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.devfhm.yapyap"
+  },
   
 ];
 
