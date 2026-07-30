@@ -60,7 +60,7 @@ const APPS = [
     name: "Passaparola - Kelime Oyunu",
     tag1: "Oyun",
     tag2: "Kelime & Bulmaca",
-    color: "#ef7a27",
+    color: "#6d9a65",
     tagline: "Türkçenin en eğlenceli kelime oyunu! cevapları bil, zamana karşı yarış.",
     description: "Passaparola; kelime dağarcığını geliştirmek, reflekslerini test etmek ve arada eğlenceli vakit geçirmek isteyen herkes için tasarlandı. Tek başına oynayarak kendi rekorlarını kır, istatistiklerinle gelişimini takip et!",
     icon: "assets/apps/app-04.png",
