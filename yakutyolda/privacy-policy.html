@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gizlilik Politikası — Yakut Yolda</title>
+<style>
+  :root {
+    --bg: #000000;
+    --panel: #0d0d0d;
+    --text: #ffffff;
+    --text-dim: #b8b8b8;
+    --ruby: #e0115f;
+    --ruby-soft: #ff5f96;
+    --line: #262626;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    font-size: 16px;
+  }
+
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header.hero {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ruby-soft);
+    border: 1px solid var(--ruby);
+    border-radius: 999px;
+    padding: 5px 14px;
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-size: 34px;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .subtitle {
+    color: var(--text-dim);
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .meta {
+    color: var(--text-dim);
+    font-size: 13px;
+    margin-top: 14px;
+  }
+
+  nav.toc {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 48px;
+  }
+
+  nav.toc p {
+    margin: 0 0 10px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  nav.toc ol {
+    margin: 0;
+    padding-left: 20px;
+    columns: 2;
+    -webkit-columns: 2;
+    column-gap: 24px;
+  }
+
+  nav.toc li { margin-bottom: 6px; break-inside: avoid; }
+
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  nav.toc a:hover { color: var(--ruby-soft); }
+
+  section {
+    margin-bottom: 44px;
+    scroll-margin-top: 24px;
+  }
+
+  h2 {
+    font-size: 21px;
+    color: var(--ruby-soft);
+    border-left: 3px solid var(--ruby);
+    padding-left: 12px;
+    margin: 0 0 16px;
+  }
+
+  h3 {
+    font-size: 16px;
+    color: var(--text);
+    margin: 22px 0 8px;
+  }
+
+  p { margin: 0 0 14px; color: var(--text); }
+
+  ul, ol.plain { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+
+  a { color: var(--ruby-soft); }
+  a:hover { color: var(--ruby); }
+
+  strong { color: #ffffff; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 20px;
+    font-size: 14px;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  th {
+    color: var(--text-dim);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  .callout {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--ruby);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+
+  .callout.warn {
+    border-left-color: #ffb020;
+  }
+
+  .callout p:last-child { margin-bottom: 0; }
+
+  .parody-box {
+    background: var(--panel);
+    border: 1px solid var(--ruby);
+    border-radius: 14px;
+    padding: 28px;
+  }
+
+  .parody-box h2 {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  footer {
+    border-top: 1px solid var(--line);
+    margin-top: 56px;
+    padding-top: 24px;
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+
+  code {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 13px;
+    color: var(--ruby-soft);
+  }
+
+  @media (max-width: 560px) {
+    nav.toc ol { columns: 1; }
+    h1 { font-size: 27px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow">Yakut Yolda</span>
+    <h1>Gizlilik Politikası</h1>
+    <p class="subtitle">Bu sayfa, Yakut Yolda mobil oyununun kişisel verilerinizi nasıl işlediğini açık ve eksiksiz şekilde anlatır.</p>
+    <p class="meta">Son güncelleme: 1 Ağustos 2026 · Yürürlük tarihi: 1 Ağustos 2026</p>
+  </header>
+
+  <nav class="toc">
+    <p>İçindekiler</p>
+    <ol>
+      <li><a href="#giris">1. Giriş</a></li>
+      <li><a href="#sorumlu">2. Veri Sorumlusu</a></li>
+      <li><a href="#toplanan-veriler">3. Toplanan Veriler</a></li>
+      <li><a href="#yerel-veri">4. Cihazınızda Saklanan Veriler</a></li>
+      <li><a href="#reklamlar">5. Reklamlar ve Google AdMob</a></li>
+      <li><a href="#satin-alma">6. Uygulama İçi Satın Alma</a></li>
+      <li><a href="#izinler">7. Uygulama İzinleri</a></li>
+      <li><a href="#ucuncu-taraf">8. Üçüncü Taraf Hizmetler</a></li>
+      <li><a href="#cocuklar">9. Çocukların Gizliliği</a></li>
+      <li><a href="#guvenlik">10. Veri Güvenliği</a></li>
+      <li><a href="#haklar">11. Haklarınız (KVKK / GDPR / CCPA)</a></li>
+      <li><a href="#saklama">12. Veri Saklama Süresi</a></li>
+      <li><a href="#degisiklikler">13. Politika Değişiklikleri</a></li>
+      <li><a href="#parodi">14. Parodi, Mizah ve Karakter Beyanı</a></li>
+      <li><a href="#iletisim">15. İletişim</a></li>
+    </ol>
+  </nav>
+
+  <section id="giris">
+    <h2>1. Giriş</h2>
+    <p>
+      <strong>Yakut Yolda</strong> ("Uygulama", "Oyun"), <strong>devFhm</strong> ("biz", "bizim") tarafından
+      geliştirilen, engellerden kaçarak yol almaya çalıştığınız ücretsiz bir mobil oyundur. Bu Gizlilik
+      Politikası, Uygulamayı indirdiğinizde, kurduğunuzda ve kullandığınızda hangi verilerin toplandığını,
+      nasıl kullanıldığını, kimlerle paylaşıldığını ve bu konudaki haklarınızın neler olduğunu açıklar.
+    </p>
+    <p>
+      Uygulamayı kullanarak bu politikada açıklanan uygulamaları kabul etmiş olursunuz. Eğer bu politikadaki
+      herhangi bir maddeyi kabul etmiyorsanız, lütfen Uygulamayı kullanmayınız.
+    </p>
+  </section>
+
+  <section id="sorumlu">
+    <h2>2. Veri Sorumlusu</h2>
+    <table>
+      <tr><th>Uygulama adı</th><td>Yakut Yolda</td></tr>
+      <tr><th>Geliştirici</th><td>devFhm</td></tr>
+      <tr><th>Paket kimliği (Android)</th><td><code>com.devfhm.yakutyolda</code></td></tr>
+      <tr><th>Web sitesi</th><td><a href="https://devfhm.org">devfhm.org</a></td></tr>
+      <tr><th>İletişim / destek</th><td><a href="mailto:destek@devfhm.org">destek@devfhm.org</a></td></tr>
+    </table>
+  </section>
+
+  <section id="toplanan-veriler">
+    <h2>3. Toplanan Veriler</h2>
+    <p>
+      Yakut Yolda; <strong>hesap oluşturmanızı, giriş yapmanızı, adınızı, e-posta adresinizi veya telefon
+      numaranızı istemez.</strong> Uygulamayı oynamak için herhangi bir kişisel bilgi girmenize gerek yoktur.
+      Aşağıdaki tabloda, Uygulama ve içindeki üçüncü taraf bileşenlerin (özellikle reklam altyapısı) ne tür
+      veriler işleyebileceği özetlenmiştir.
+    </p>
+    <table>
+      <tr><th>Veri türü</th><th>Toplanır mı?</th><th>Kim tarafından / nasıl</th></tr>
+      <tr><td>Ad, soyad, e-posta, telefon</td><td>Hayır</td><td>—</td></tr>
+      <tr><td>Konum verisi (GPS)</td><td>Hayır</td><td>Uygulama konum izni istemez</td></tr>
+      <tr><td>Rehber / kişiler</td><td>Hayır</td><td>—</td></tr>
+      <tr><td>Oyun istatistikleri (skor, süre, geçmiş)</td><td>Evet, ama SADECE cihazınızda</td><td>Yerel depolama (Hive) — bkz. Bölüm 4</td></tr>
+      <tr><td>Reklam kimliği / cihaz tanımlayıcıları</td><td>Evet</td><td>Google AdMob — bkz. Bölüm 5</td></tr>
+      <tr><td>Yaklaşık cihaz/ağ bilgisi (reklam sunumu için)</td><td>Evet</td><td>Google AdMob — bkz. Bölüm 5</td></tr>
+      <tr><td>Satın alma işlem bilgisi</td><td>Evet, Google tarafından</td><td>Google Play Faturalandırma — bkz. Bölüm 6</td></tr>
+      <tr><td>Çökme/hata raporları</td><td>Hayır (şu an entegre değil)</td><td>—</td></tr>
+    </table>
+  </section>
+
+  <section id="yerel-veri">
+    <h2>4. Cihazınızda Saklanan Veriler</h2>
+    <p>
+      Yakut Yolda, oynanış geçmişinizi (en yüksek skorunuz, geçmiş tur kayıtlarınız, toplam oynama süreniz gibi
+      istatistikler) ve ses/tercih ayarlarınızı (müzik seviyesi, efekt açık/kapalı) <strong>yalnızca cihazınızın
+      dahili belleğinde</strong>, yerel bir veritabanı (Hive) kullanarak saklar.
+    </p>
+    <ul>
+      <li>Bu veriler <strong>bizim sunucularımıza veya başka hiçbir yere gönderilmez.</strong></li>
+      <li>Bu veriler yalnızca sizin cihazınızda, siz Uygulamayı kullandığınız sürece bulunur.</li>
+      <li>Uygulamayı silmeniz durumunda bu veriler cihazınızdan kalıcı olarak silinir.</li>
+      <li>Bu verilere biz erişemeyiz; sunucu tarafında bir kopyası tutulmaz.</li>
+    </ul>
+  </section>
+
+  <section id="reklamlar">
+    <h2>5. Reklamlar ve Google AdMob</h2>
+    <p>
+      Yakut Yolda ücretsizdir ve gelirinin bir kısmını reklamlar aracılığıyla elde eder. Reklam gösterimi için
+      <strong>Google AdMob</strong> (Google LLC) altyapısını kullanıyoruz. Uygulama içinde şu reklam türleri
+      gösterilir:
+    </p>
+    <ul>
+      <li><strong>Geçiş (interstitial) reklamı:</strong> belirli aralıklarla, oyun turları arasında gösterilir.</li>
+      <li><strong>Ödüllü (rewarded) reklamlar:</strong> tamamen isteğe bağlıdır — "Son Şans" (canlanma),
+        "Kalkan Hediyesi" (geçici dokunulmazlık) ve "Şok Dalgası" (ek özel yetenek kullanımı) özelliklerinde,
+        SADECE siz reklamı izlemeyi seçerseniz gösterilir. Reklamı izlemek zorunlu değildir.</li>
+    </ul>
+    <p>
+      Google AdMob, size ilgi alanlarınıza uygun reklamlar gösterebilmek için reklam kimliğiniz (Advertising ID),
+      cihaz modeliniz, işletim sistemi sürümünüz, yaklaşık konum (ülke/şehir düzeyinde, IP adresinden türetilen)
+      ve reklam etkileşim verileri gibi bilgileri işleyebilir. Bu veriler <strong>bizim tarafımızdan değil,
+      doğrudan Google tarafından, Google'ın kendi gizlilik politikasına göre</strong> işlenir.
+    </p>
+    <div class="callout">
+      <p>
+        Google'ın veri işleme uygulamaları hakkında ayrıntılı bilgi için:
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a>
+        ve
+        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google Reklam Teknolojileri</a>
+        sayfalarını inceleyebilirsiniz. Reklam kişiselleştirmesini cihazınızın sistem ayarlarından
+        (Android: Ayarlar → Google → Reklamlar) yönetebilir veya sıfırlayabilirsiniz.
+      </p>
+    </div>
+  </section>
+
+  <section id="satin-alma">
+    <h2>6. Uygulama İçi Satın Alma</h2>
+    <p>
+      Uygulama, reklamları kalıcı olarak kaldıran isteğe bağlı, tek seferlik bir "Premium" satın alma seçeneği
+      sunabilir. Bu satın alma işlemi <strong>tamamen Google Play Faturalandırma (Google Play Billing)</strong>
+      üzerinden gerçekleştirilir. Kredi kartı/ödeme bilgileriniz bizim tarafımızdan görülmez veya saklanmaz —
+      bu bilgiler doğrudan Google tarafından, Google'ın kendi güvenlik ve gizlilik standartlarına göre işlenir.
+      Biz yalnızca satın alma işleminin başarılı olup olmadığı bilgisini alırız.
+    </p>
+  </section>
+
+  <section id="izinler">
+    <h2>7. Uygulama İzinleri</h2>
+    <table>
+      <tr><th>İzin</th><th>Neden gerekli</th></tr>
+      <tr>
+        <td><code>INTERNET</code></td>
+        <td>Reklamların yüklenip gösterilebilmesi ve gerçek internet bağlantısının doğrulanması için.</td>
+      </tr>
+      <tr>
+        <td><code>ACCESS_NETWORK_STATE</code></td>
+        <td>Reklam altyapısının ağ durumunu kontrol edebilmesi için.</td>
+      </tr>
+    </table>
+    <p>
+      Uygulama; konum, kamera, mikrofon, rehber, depolama, SMS gibi hassas izinleri <strong>istemez ve
+      kullanmaz.</strong>
+    </p>
+  </section>
+
+  <section id="ucuncu-taraf">
+    <h2>8. Üçüncü Taraf Hizmetler</h2>
+    <p>Uygulama, işlevlerini yerine getirebilmek için aşağıdaki üçüncü taraf hizmet/kütüphaneleri kullanır:</p>
+    <table>
+      <tr><th>Hizmet</th><th>Amaç</th><th>Veri paylaşımı</th></tr>
+      <tr>
+        <td>Google AdMob / Google Mobile Ads SDK</td>
+        <td>Reklam gösterimi</td>
+        <td>Reklam kimliği, cihaz/ağ bilgisi (bkz. Bölüm 5)</td>
+      </tr>
+      <tr>
+        <td>Google Play Faturalandırma</td>
+        <td>Uygulama içi satın alma</td>
+        <td>Satın alma durumu (bkz. Bölüm 6)</td>
+      </tr>
+      <tr>
+        <td>Google Play Services</td>
+        <td>Uygulamanın Android üzerinde temel çalışması</td>
+        <td>Google'ın kendi politikasına tabidir</td>
+      </tr>
+    </table>
+    <p>
+      Bu hizmetlerin her biri kendi gizlilik politikalarına tabidir. Biz bu üçüncü taraf hizmetlerin veri
+      işleme uygulamalarını doğrudan kontrol etmiyoruz; yalnızca bu Uygulama'nın işlevselliği için gerekli olan
+      kadarını entegre ediyoruz.
+    </p>
+  </section>
+
+  <section id="cocuklar">
+    <h2>9. Çocukların Gizliliği</h2>
+    <p>
+      Yakut Yolda, genel kitleye yönelik bir eğlence uygulamasıdır ve <strong>bilerek 13 yaşın altındaki
+      çocuklardan kişisel veri toplamaz.</strong> Uygulama hiçbir aşamada ad, e-posta, telefon numarası veya
+      başka bir kimlik bilgisi istemez. Bununla birlikte, reklam altyapımız (Google AdMob) genel kitleye
+      yönelik standart reklam sunumu yapar; Uygulamayı çocuğunuzun kullanmasına izin veriyorsanız, cihaz
+      düzeyinde ebeveyn denetimi/reklam kişiselleştirme ayarlarını kullanmanızı öneririz.
+    </p>
+    <p>
+      13 yaşın altındaki bir çocuğunuzun bize kişisel veri sağladığını düşünüyorsanız, lütfen
+      <a href="mailto:destek@devfhm.org">destek@devfhm.org</a> adresinden bizimle iletişime geçin; ilgili
+      veriyi (varsa) derhal inceleyip gerekli işlemi yapacağız.
+    </p>
+  </section>
+
+  <section id="guvenlik">
+    <h2>10. Veri Güvenliği</h2>
+    <p>
+      Cihazınızda tuttuğumuz veriler (skor/istatistik/tercihler) yalnızca yerel olarak saklandığı için, bu
+      verilerin bizim sunucularımızdan sızması gibi bir risk <strong>söz konusu değildir</strong> — çünkü bu
+      veriler hiçbir sunucuya gönderilmez. Üçüncü taraf hizmetlerin (Google) işlediği veriler ise Google'ın
+      endüstri standardı güvenlik önlemlerine tabidir.
+    </p>
+  </section>
+
+  <section id="haklar">
+    <h2>11. Haklarınız (KVKK / GDPR / CCPA)</h2>
+    <p>
+      Bulunduğunuz ülkeye/bölgeye bağlı olarak (Türkiye'de <strong>6698 sayılı Kişisel Verilerin Korunması
+      Kanunu (KVKK)</strong>, Avrupa Birliği'nde <strong>GDPR</strong>, Kaliforniya'da <strong>CCPA</strong>
+      kapsamında) aşağıdaki haklara sahip olabilirsiniz:
+    </p>
+    <ul>
+      <li>Hakkınızda işlenen verinin olup olmadığını öğrenme,</li>
+      <li>İşlenen veriye ilişkin bilgi talep etme,</li>
+      <li>Verinin düzeltilmesini veya silinmesini isteme,</li>
+      <li>İşlemeye itiraz etme,</li>
+      <li>Şikayet ve talepleriniz için ilgili veri koruma otoritesine başvurma.</li>
+    </ul>
+    <p>
+      Uygulama kişisel veri toplamadığı için bu haklar büyük ölçüde <strong>Google AdMob'un işlediği reklam
+      verileriyle ilgilidir</strong> — bu konudaki talepleriniz için doğrudan
+      <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Google Hesabım</a>
+      üzerinden veya bize <a href="mailto:destek@devfhm.org">destek@devfhm.org</a> adresinden ulaşarak
+      yönlendirme talep edebilirsiniz.
+    </p>
+  </section>
+
+  <section id="saklama">
+    <h2>12. Veri Saklama Süresi</h2>
+    <p>
+      Cihazınızda tutulan oyun verileri, Uygulamayı cihazınızdan kaldırana veya Uygulama içinden verileri
+      manuel olarak temizleyene kadar saklanır. Bizim tarafımızda saklanan bir kopya olmadığı için ayrıca bir
+      "silme talebi" işlemi gerekmez — Uygulamayı kaldırmanız yeterlidir.
+    </p>
+  </section>
+
+  <section id="degisiklikler">
+    <h2>13. Politika Değişiklikleri</h2>
+    <p>
+      Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Önemli değişiklikler olması durumunda, güncel
+      politika bu sayfada yayınlanır ve sayfanın üstündeki "Son güncelleme" tarihi değiştirilir. Uygulamayı
+      güncellemeler sonrasında kullanmaya devam etmeniz, güncel politikayı kabul ettiğiniz anlamına gelir.
+    </p>
+  </section>
+
+  <section id="parodi">
+    <div class="parody-box">
+      <h2>14. Parodi, Mizah ve Karakter Beyanı</h2>
+      <p>
+        Yakut Yolda, <strong>tamamen kurgusal, mizahi ve parodi amaçlı</strong> bir eğlence oyunudur. Oyun
+        içinde ekrana rastgele giren bazı "baloncuk" görselleri, popüler kültürden ve sosyal medyadan esinlenen,
+        <strong>abartılı/karikatürize edilmiş (stilize) parodi tasvirleridir.</strong>
+      </p>
+      <ul>
+        <li>
+          Bu görseller, herhangi bir gerçek kişiyi <strong>hedef almak, aşağılamak, itibarsızlaştırmak,
+          hakaret etmek veya karalamak</strong> amacı taşımaz. Tamamen mizahi/eğlence amaçlı, iyi niyetli
+          bir parodi/karikatür formatında sunulur.
+        </li>
+        <li>
+          Oyun içindeki hiçbir karakter, gerçek bir kişinin <strong>resmi, birebir görüntüsü veya doğru bir
+          temsili değildir</strong> — stilize edilmiş, kurgusal illüstrasyonlardır.
+        </li>
+        <li>
+          Yakut Yolda; içinde parodi olarak atıfta bulunulabilecek hiçbir gerçek kişi, marka, sosyal medya
+          platformu veya kuruluşla <strong>iş birliği içinde değildir, onlar tarafından desteklenmemektedir,
+          onaylanmamıştır ve onlarla resmi hiçbir bağlantısı yoktur.</strong>
+        </li>
+        <li>
+          Parodi ve hiciv, birçok yargı alanında ifade özgürlüğü ve adil kullanım (fair use) kapsamında
+          korunan, yerleşik bir mizah/sanat geleneğidir; bu içerikler bu çerçevede, kötü niyet taşımadan
+          sunulmaktadır.
+        </li>
+      </ul>
+      <p>
+        Eğer kendinizi bu görsellerden biriyle ilişkilendiriyorsanız ve bu tasvirden rahatsızlık
+        duyuyorsanız, lütfen doğrudan <a href="mailto:destek@devfhm.org">destek@devfhm.org</a> adresinden
+        bizimle iletişime geçin. Talebinizi iyi niyetle değerlendirip, ilgili görseli makul bir süre içinde
+        güncelleyecek veya kaldıracağız.
+      </p>
+    </div>
+  </section>
+
+  <section id="iletisim">
+    <h2>15. İletişim</h2>
+    <p>
+      Bu Gizlilik Politikası veya veri işleme uygulamalarımız hakkında sorularınız, talepleriniz veya
+      şikayetleriniz için bize ulaşabilirsiniz:
+    </p>
+    <table>
+      <tr><th>E-posta</th><td><a href="mailto:destek@devfhm.org">destek@devfhm.org</a></td></tr>
+      <tr><th>Web sitesi</th><td><a href="https://devfhm.org">devfhm.org</a></td></tr>
+    </table>
+  </section>
+
+  <footer>
+    <p>© 2026 devFhm — Yakut Yolda. Tüm hakları saklıdır.</p>
+  </footer>
+
+</div>
+</body>
+</html>
