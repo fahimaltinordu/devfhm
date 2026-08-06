@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gizlilik Politikası — Kelimebaz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1A17;
+    --surface:#16241F;
+    --surface-light:#1E332C;
+    --emerald:#10B981;
+    --gold:#D4AF37;
+    --text-primary:#F5F3EE;
+    --text-secondary:#A8B5AF;
+    --tile-border:#3E5A50;
+    --paper:#FBFAF6;
+    --ink:#1C2622;
+    --ink-soft:#4B5A54;
+    --rule:#E4E1D6;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Poppins',system-ui,-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+  }
+
+  /* ---------- Üst marka bandı ---------- */
+  header.hero{
+    position:relative;
+    padding:64px 24px 96px;
+    background:
+      radial-gradient(ellipse 900px 500px at 50% -10%, var(--surface-light), transparent 60%),
+      linear-gradient(160deg, var(--bg) 0%, var(--surface) 100%);
+    text-align:center;
+    overflow:hidden;
+  }
+  header.hero::before,
+  header.hero::after{
+    content:"";
+    position:absolute;
+    width:120px;height:120px;
+    border:4px solid var(--tile-border);
+    border-radius:26px;
+    opacity:.18;
+  }
+  header.hero::before{ top:-30px; left:8%; transform:rotate(-12deg); }
+  header.hero::after{ bottom:-40px; right:6%; transform:rotate(9deg); }
+
+  .brand-mark{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:64px;height:64px;
+    border-radius:18px;
+    background:var(--surface-light);
+    border:2px solid var(--gold);
+    margin-bottom:22px;
+  }
+  .brand-mark span{
+    font-weight:800;
+    font-size:26px;
+    color:var(--emerald);
+  }
+  header.hero h1{
+    margin:0 0 10px;
+    font-size:clamp(28px,4.6vw,44px);
+    font-weight:800;
+    color:var(--text-primary);
+    letter-spacing:-0.01em;
+  }
+  header.hero p.sub{
+    margin:0;
+    color:var(--text-secondary);
+    font-size:16px;
+    font-weight:500;
+  }
+  header.hero p.meta{
+    margin:18px 0 0;
+    display:inline-flex;
+    gap:10px;
+    align-items:center;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.04em;
+    color:var(--gold);
+    background:rgba(212,175,55,.08);
+    border:1px solid rgba(212,175,55,.35);
+    padding:8px 16px;
+    border-radius:999px;
+  }
+
+  /* ---------- İçerik kağıdı ---------- */
+  main{
+    max-width:880px;
+    margin:-56px auto 0;
+    background:var(--paper);
+    border-radius:24px 24px 0 0;
+    padding:48px 40px 80px;
+    box-shadow:0 -20px 60px rgba(0,0,0,.35);
+    position:relative;
+  }
+
+  nav.toc{
+    background:#F1EFE4;
+    border:1px solid var(--rule);
+    border-radius:16px;
+    padding:22px 26px;
+    margin:0 0 44px;
+  }
+  nav.toc h2{
+    margin:0 0 12px;
+    font-size:13px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:700;
+  }
+  nav.toc ol{
+    margin:0;
+    padding-left:20px;
+    columns:2;
+    column-gap:28px;
+    font-size:14.5px;
+  }
+  nav.toc li{ margin-bottom:8px; break-inside:avoid; }
+  nav.toc a{
+    color:var(--ink);
+    text-decoration:none;
+    font-weight:500;
+  }
+  nav.toc a:hover{ color:var(--emerald); text-decoration:underline; }
+
+  section{ margin-bottom:40px; scroll-margin-top:24px; }
+  section h2{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    font-size:21px;
+    font-weight:700;
+    color:var(--ink);
+    margin:0 0 14px;
+    padding-bottom:10px;
+    border-bottom:2px solid var(--rule);
+  }
+  section h2 .num{
+    color:var(--emerald);
+    font-variant-numeric:tabular-nums;
+    font-weight:800;
+  }
+  section h3{
+    font-size:16px;
+    font-weight:700;
+    margin:20px 0 8px;
+    color:var(--ink);
+  }
+  p{
+    line-height:1.75;
+    font-size:15.5px;
+    color:#33403A;
+    margin:0 0 14px;
+  }
+  ul{ margin:0 0 14px; padding-left:22px; }
+  li{ line-height:1.7; font-size:15.5px; color:#33403A; margin-bottom:6px; }
+  strong{ color:var(--ink); font-weight:700; }
+  a.link{ color:#0E7C5A; font-weight:600; text-decoration:underline; text-underline-offset:2px; }
+
+  table.data-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:16px 0 20px;
+    font-size:14.5px;
+    background:#fff;
+    border:1px solid var(--rule);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  table.data-table th, table.data-table td{
+    text-align:left;
+    padding:12px 14px;
+    border-bottom:1px solid var(--rule);
+    vertical-align:top;
+  }
+  table.data-table th{
+    background:#F1EFE4;
+    font-weight:700;
+    color:var(--ink);
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+  }
+  table.data-table tr:last-child td{ border-bottom:none; }
+
+  .callout{
+    display:flex;
+    gap:14px;
+    background:#EAF6EF;
+    border:1px solid #BFE3CE;
+    border-radius:14px;
+    padding:18px 20px;
+    margin:18px 0;
+  }
+  .callout .dot{
+    flex:none;
+    width:22px;height:22px;
+    border-radius:50%;
+    background:var(--emerald);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:800;
+    margin-top:2px;
+  }
+  .callout p{ margin:0; font-size:14.5px; }
+
+  .contact-card{
+    background:linear-gradient(160deg, var(--surface) 0%, var(--bg) 100%);
+    border-radius:18px;
+    padding:28px 30px;
+    color:var(--text-primary);
+  }
+  .contact-card h2{
+    color:var(--text-primary);
+    border-bottom-color:rgba(255,255,255,.12);
+  }
+  .contact-card p{ color:var(--text-secondary); }
+  .contact-card a{ color:var(--gold); font-weight:600; text-decoration:none; }
+  .contact-card a:hover{ text-decoration:underline; }
+
+  footer{
+    max-width:880px;
+    margin:0 auto;
+    padding:26px 40px 50px;
+    background:var(--paper);
+    text-align:center;
+    font-size:12.5px;
+    color:#7C877F;
+  }
+
+  @media (max-width:640px){
+    header.hero{ padding:48px 20px 80px; }
+    main{ padding:34px 22px 60px; border-radius:20px 20px 0 0; }
+    nav.toc ol{ columns:1; }
+    section h2{ font-size:18.5px; }
+  }
+
+  @media print{
+    header.hero{ background:none; padding:20px 0; }
+    header.hero::before, header.hero::after{ display:none; }
+    main{ box-shadow:none; margin:0; }
+    nav.toc{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="brand-mark"><span>K</span></div>
+  <h1>Gizlilik Politikası</h1>
+  <p class="sub">Kelimebaz — Türkçe Kelime Bulmaca Oyunu</p>
+  <p class="meta">Son güncelleme: 6 Ağustos 2026</p>
+</header>
+
+<main>
+
+  <nav class="toc" aria-label="İçindekiler">
+    <h2>İçindekiler</h2>
+    <ul style="list-style:none; margin:0; padding:0; columns:2; column-gap:28px; font-size:14.5px;">
+      <li style="margin-bottom:8px; break-inside:avoid;"><a href="#giris">1. Giriş</a></li>
+      <li style="margin-bottom:8px; break-inside:avoid;"><a href="#toplanan-veri">2. Topladığımız veriler</a></li>
+      <li style="margin-bottom:8px; break-inside:avoid;"><a href="#yerel-veri">3. Cihazında kalan veriler</a></li>
+      <li style="margin-bottom:8px; break-inside:avoid;"><a href="#reklamlar">4. Reklamlar ve Google AdMob</a></li>
+      <li style="margin-bottom:8px; break-inside:avoid;"><a href="#izinler">5. Uygulama izinleri</a></li>
+      <li style="margin-bottom:8px; break-inside:avoid;"><a href="#cocuklar">6. Çocukların gizliliği</a></li>
+      <li style="margin-bottom:8px; break-inside:avoid;"><a href="#haklarin">7. Haklarınız</a></li>
+      <li style="margin-bottom:8px; break-inside:avoid;"><a href="#guvenlik">8. Veri güvenliği</a></li>
+      <li style="margin-bottom:8px; break-inside:avoid;"><a href="#degisiklikler">9. Politikadaki değişiklikler</a></li>
+      <li style="margin-bottom:8px; break-inside:avoid;"><a href="#iletisim">10. İletişim</a></li>
+    </ul>
+  </nav>
+
+  <section id="giris">
+    <h2><span class="num">01</span> Giriş</h2>
+    <p>
+      Bu gizlilik politikası, <strong>devFhm</strong> tarafından geliştirilen ve Google Play
+      üzerinden dağıtılan <strong>Kelimebaz</strong> (paket adı: <code>com.devfhm.kelimebaz</code>)
+      mobil uygulaması için geçerlidir. Bu belge, uygulamayı kullanırken hangi verilerin
+      işlendiğini, kimlerle paylaşıldığını ve bu konudaki haklarınızı basit ve anlaşılır bir
+      dille açıklar.
+    </p>
+    <div class="callout">
+      <div class="dot">✓</div>
+      <p>
+        Kısaca: Kelimebaz'da <strong>hesap oluşturma yok</strong>, <strong>sunucuya veri
+        gönderme yok</strong>. Oyun istatistiklerin sadece kendi cihazında tutulur. Uygulamanın
+        işlediği tek üçüncü taraf veri, reklam gösterimi için Google AdMob'un topladığı sınırlı
+        cihaz/reklam verisidir — aşağıda ayrıntılı anlatıyoruz.
+      </p>
+    </div>
+  </section>
+
+  <section id="toplanan-veri">
+    <h2><span class="num">02</span> Topladığımız veriler</h2>
+    <p>
+      Kelimebaz'ın kendisi (yani devFhm olarak biz) hiçbir kimlik doğrulama, kayıt/giriş sistemi
+      çalıştırmıyoruz ve kendi sunucularımıza <strong>hiçbir kişisel veri göndermiyoruz</strong>.
+      Uygulama, adını, e-postanı, konumunu ya da iletişim bilgilerini istemez ve toplamaz.
+    </p>
+    <p>
+      Uygulama içinde işlenen tek veri kategorisi, aşağıdaki bölümlerde detaylandırılan
+      (a) cihazında yerel olarak tutulan oyun istatistiklerin ve (b) reklam gösterimi için
+      Google AdMob'un topladığı sınırlı, kişiyi doğrudan tanımlamayan cihaz/reklam kimliği
+      verileridir.
+    </p>
+  </section>
+
+  <section id="yerel-veri">
+    <h2><span class="num">03</span> Cihazında kalan veriler</h2>
+    <p>
+      Oynadığın seviyeler, kazanma oranın, en iyi serin ve deneme dağılımın gibi istatistikler,
+      cihazının yerel depolama alanında (Hive veritabanı) tutulur. Bu veriler:
+    </p>
+    <ul>
+      <li><strong>Hiçbir sunucuya gönderilmez</strong> — tamamen cihazında kalır.</li>
+      <li>Bizim ya da başka bir üçüncü tarafın erişimine açık değildir.</li>
+      <li>Uygulamayı sildiğinde cihazından tamamen silinir.</li>
+      <li>Başka bir cihaza otomatik aktarılmaz (bulut yedekleme/senkronizasyon yoktur).</li>
+    </ul>
+  </section>
+
+  <section id="reklamlar">
+    <h2><span class="num">04</span> Reklamlar ve Google AdMob</h2>
+    <p>
+      Kelimebaz, uygulama içi bazı özellikleri (ör. "Harf Al", "Harf Ele", "Kurtarma
+      Penceresi") ödüllü reklamlarla, seviyeler arasında da zaman zaman geçiş reklamlarıyla
+      sunar. Bu reklamlar <strong>Google AdMob</strong> altyapısı üzerinden gösterilir.
+    </p>
+    <p>
+      Reklamların gösterilebilmesi için Google Mobile Ads SDK'sı, cihazında aşağıdaki türde
+      sınırlı veriler işleyebilir:
+    </p>
+    <table class="data-table">
+      <thead>
+        <tr><th>Veri türü</th><th>Amaç</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Reklam Kimliği (Advertising ID)</td>
+          <td>İlgi alanına göre (ya da genel) reklam gösterimi ve ölçümleme</td>
+        </tr>
+        <tr>
+          <td>Cihaz/uygulama bilgisi (model, işletim sistemi, kaba konum/ülke)</td>
+          <td>Reklam uyumluluğu, dolandırıcılık önleme, performans ölçümü</td>
+        </tr>
+        <tr>
+          <td>Reklam etkileşim verisi (gösterim, tıklama, izlenme süresi)</td>
+          <td>Reklam gelirinin hesaplanması ve raporlama</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Bu verilerin toplanması, işlenmesi ve saklanması <strong>Google'ın kendi gizlilik
+      politikasına</strong> tabidir; biz bu verilere erişemeyiz ve bunları kontrol edemeyiz.
+      Detaylı bilgi için:
+    </p>
+    <ul>
+      <li>
+        <a class="link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">
+          Google Gizlilik Politikası
+        </a>
+      </li>
+      <li>
+        <a class="link" href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">
+          Google AdMob ve Google Ads verilerinizi nasıl kullanır?
+        </a>
+      </li>
+      <li>
+        <a class="link" href="https://adssettings.google.com" target="_blank" rel="noopener">
+          Google Reklam Ayarları — kişiselleştirilmiş reklamları kapatma
+        </a>
+      </li>
+    </ul>
+    <p>
+      Android cihazında Reklam Kimliğini dilediğin zaman sıfırlayabilir ya da
+      kişiselleştirilmiş reklamları kısıtlayabilirsin: <em>Ayarlar → Google → Reklamlar</em>.
+    </p>
+  </section>
+
+  <section id="izinler">
+    <h2><span class="num">05</span> Uygulama izinleri</h2>
+    <p>Kelimebaz'ın çalışması ve reklam gösterebilmesi için istediği izinler şunlardır:</p>
+    <ul>
+      <li><strong>İnternet erişimi</strong> — reklamların yüklenebilmesi için.</li>
+      <li><strong>Ağ durumu bilgisi</strong> — internet bağlantısı olup olmadığını anlamak,
+        buna göre uygulama içi uyarılar göstermek için (ör. "Harf Al" butonunun neden pasif
+        olduğunu açıklamak).</li>
+    </ul>
+    <p>
+      Uygulama; konumunu, kişilerini, kamerana/mikrofonuna erişimi, dosyalarını ya da SMS'lerini
+      talep etmez.
+    </p>
+  </section>
+
+  <section id="cocuklar">
+    <h2><span class="num">06</span> Çocukların gizliliği</h2>
+    <p>
+      Kelimebaz genel kitleye yönelik bir kelime bulmaca oyunudur ve özellikle çocuklara
+      yönelik olarak tasarlanmamıştır. Uygulama, yaşından bağımsız olarak kullanıcılardan
+      kişisel veri talep etmez. Uygulama içindeki reklamlar, çocuklara özel bir içerik
+      politikasıyla sınırlandırılmamıştır (child-directed olarak işaretlenmemiştir) — bu
+      nedenle 13 yaş altı çocukların uygulamayı bir ebeveyn/vasi gözetiminde kullanmasını
+      öneririz.
+    </p>
+  </section>
+
+  <section id="haklarin">
+    <h2><span class="num">07</span> Haklarınız</h2>
+    <p>
+      6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve ilgili mevzuat kapsamında;
+      işlenen bir kişisel verinin olup olmadığını öğrenme, işlenmişse buna ilişkin bilgi
+      talep etme, işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme ile
+      düzeltme/silme talep etme haklarına sahipsin. Ancak yukarıda açıklandığı gibi,
+      biz doğrudan bir kişisel veri saklamadığımız için bu haklar büyük ölçüde
+      <strong>Google AdMob'un işlediği reklam verileriyle</strong> ilgilidir — bu veriler için
+      doğrudan Google'ın kendi araçlarını (Reklam Ayarları, hesap gizlilik kontrol paneli)
+      kullanabilirsin.
+    </p>
+    <p>
+      Cihazında tutulan oyun istatistiklerini silmek için uygulamayı cihazından kaldırman
+      (uninstall) ya da (varsa) sistem ayarlarından uygulama verisini temizlemen yeterlidir.
+    </p>
+  </section>
+
+  <section id="guvenlik">
+    <h2><span class="num">08</span> Veri güvenliği</h2>
+    <p>
+      Kendi sunucularımızda kişisel veri tutmadığımız için bu konudaki en büyük sorumluluk
+      Google'ın altyapısındadır; Google, endüstri standardı güvenlik önlemleriyle veri
+      işler. Cihazında yerel olarak tutulan istatistik verileri ise sadece cihazının kendi
+      işletim sistemi güvenliğine tabidir, uygulama dışından erişilebilir bir biçimde
+      saklanmaz.
+    </p>
+  </section>
+
+  <section id="degisiklikler">
+    <h2><span class="num">09</span> Politikadaki değişiklikler</h2>
+    <p>
+      Bu gizlilik politikası, uygulamadaki değişikliklere ya da yasal gereksinimlere göre
+      zaman zaman güncellenebilir. Önemli değişikliklerde bu sayfanın üstündeki "son
+      güncelleme" tarihi yenilenecektir. Uygulamayı kullanmaya devam etmen, güncel politikayı
+      kabul ettiğin anlamına gelir.
+    </p>
+  </section>
+
+  <section id="iletisim" class="contact-card">
+    <h2><span class="num">10</span> İletişim</h2>
+    <p>
+      Bu gizlilik politikasıyla ilgili sorularının olması halinde bizimle iletişime
+      geçebilirsin:
+    </p>
+    <p>
+      Geliştirici: <strong style="color:var(--text-primary)">devFhm</strong><br>
+      E-posta: <a href="mailto:destek@devfhm.org">destek@devfhm.org</a><br>
+      Web sitesi: <a href="https://devfhm.org" target="_blank" rel="noopener">devfhm.org</a>
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 devFhm — Kelimebaz. Tüm hakları saklıdır.
+</footer>
+
+</body>
+</html>
