@@ -109,11 +109,11 @@ const APPS = [
   {
     id: "app-07",
     name: "Kelimebaz",
-    tag1: "Oyun",
-    tag2: "Arcade",
-    color: "#05ac81",
-    tagline: "Hazır mısın? Direksiyona geç, baloncukları savuştur",
-    description: "Yol boyunca karşına çıkan renkli ve esprili baloncuk karakterleri tamamen kurgusal, mizahi/parodi amaçlı illüstrasyonlardır — eğlenmek için tasarlandı.",
+    tag1: "Kelime",
+    tag2: "Zeka oyunları",
+    color: "#eab21d",
+    tagline: "Kelimebaz — Türkçe Kelime Bulmaca Oyunu",
+    description: "Aklındaki harfleri sırala, doğru kelimeyi bul! Kelimebaz, sevdiğiniz kelime tahmin oyununun tamamen Türkçe, reklamsız kesintiyle akıcı bir deneyime dönüştürülmüş hali. İnternet olmadan da oynanır, kurulum sonrası tamamen cihazında çalışır.",
     icon: "assets/apps/app-07.png",
     screenshots: [
       "assets/screenshots/app-07-1.jpg",
@@ -121,7 +121,7 @@ const APPS = [
       "assets/screenshots/app-07-3.jpg",
       "assets/screenshots/app-07-4.jpg"
     ],
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.devfhm.yakutyolda"
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.devfhm.kelimebaz"
   },
 ];
 
