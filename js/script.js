@@ -89,7 +89,40 @@ const APPS = [
     ],
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.devfhm.yapyap"
   },
-  
+  {
+    id: "app-06",
+    name: "Yakut Yolda",
+    tag1: "Oyun",
+    tag2: "Arcade",
+    color: "#05ac81",
+    tagline: "Hazır mısın? Direksiyona geç, baloncukları savuştur",
+    description: "Yol boyunca karşına çıkan renkli ve esprili baloncuk karakterleri tamamen kurgusal, mizahi/parodi amaçlı illüstrasyonlardır — eğlenmek için tasarlandı.",
+    icon: "assets/apps/app-06.png",
+    screenshots: [
+      "assets/screenshots/app-06-1.png",
+      "assets/screenshots/app-06-2.png",
+      "assets/screenshots/app-06-3.png",
+      "assets/screenshots/app-06-4.png"
+    ],
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.devfhm.yakutyolda"
+  },
+  {
+    id: "app-07",
+    name: "Kelimebaz",
+    tag1: "Oyun",
+    tag2: "Arcade",
+    color: "#05ac81",
+    tagline: "Hazır mısın? Direksiyona geç, baloncukları savuştur",
+    description: "Yol boyunca karşına çıkan renkli ve esprili baloncuk karakterleri tamamen kurgusal, mizahi/parodi amaçlı illüstrasyonlardır — eğlenmek için tasarlandı.",
+    icon: "assets/apps/app-07.png",
+    screenshots: [
+      "assets/screenshots/app-07-1.jpg",
+      "assets/screenshots/app-07-2.jpg",
+      "assets/screenshots/app-07-3.jpg",
+      "assets/screenshots/app-07-4.jpg"
+    ],
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.devfhm.yakutyolda"
+  },
 ];
 
 /* Her uygulama "color" alanıyla kendi vurgu rengini taşır.
