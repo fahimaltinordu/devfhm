@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gizlilik Politikası — O mu Bu mu</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1a222d;
+    --muted: #5b6472;
+    --accent: #1f9d5c;
+    --accent-dark: #167a47;
+    --border: #e3e7ec;
+    --card-bg: #f7f9fb;
+    --warn-bg: #fff8ec;
+    --warn-border: #f0d9a6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.65;
+    font-size: 16px;
+  }
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 8px;
+  }
+  .logo-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(160deg, #0E141E, #070A0F);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 15px;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -0.2px;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .meta-box {
+    margin-top: 28px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .meta-box strong { color: var(--text); }
+  .meta-box div { margin: 3px 0; }
+  nav.toc {
+    margin-top: 28px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 22px;
+    background: var(--card-bg);
+  }
+  nav.toc h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+  nav.toc ol { margin: 0; padding-left: 20px; }
+  nav.toc li { margin-bottom: 6px; }
+  nav.toc a { color: var(--accent-dark); text-decoration: none; font-size: 14.5px; }
+  nav.toc a:hover { text-decoration: underline; }
+
+  section { margin-top: 44px; }
+  h2 {
+    font-size: 19px;
+    font-weight: 800;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 10px;
+    margin: 0 0 16px;
+    scroll-margin-top: 20px;
+  }
+  h3 {
+    font-size: 15.5px;
+    font-weight: 700;
+    margin: 22px 0 8px;
+  }
+  p { margin: 10px 0; }
+  ul, ol { padding-left: 22px; }
+  li { margin: 6px 0; }
+  a { color: var(--accent-dark); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 14.5px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    background: var(--card-bg);
+    font-weight: 700;
+    font-size: 13.5px;
+  }
+
+  .callout {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 14.5px;
+    margin: 16px 0;
+  }
+  .callout strong { display: block; margin-bottom: 4px; }
+
+  .pill-list { list-style: none; padding: 0; margin: 12px 0; }
+  .pill-list li {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    font-size: 14.5px;
+  }
+  .pill-list b { color: var(--text); }
+
+  .contact-card {
+    margin-top: 18px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    background: var(--card-bg);
+  }
+  .contact-card div { margin: 4px 0; font-size: 14.5px; }
+
+  footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 32px 16px 60px; }
+    h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo-badge">O/B</div>
+    <div>
+      <h1>Gizlilik Politikası</h1>
+      <div class="subtitle">O mu Bu mu — Türkçe Kelime Bilgisi Oyunu</div>
+    </div>
+  </header>
+
+  <div class="meta-box">
+    <div><strong>Yürürlük tarihi:</strong> 9 Ağustos 2026</div>
+    <div><strong>Uygulama:</strong> O mu Bu mu (Android)</div>
+    <div><strong>Paket adı:</strong> com.devfhm.omubumu</div>
+    <div><strong>Geliştirici:</strong> devFhm</div>
+    <div><strong>İletişim:</strong> <a href="mailto:destek@devfhm.org">destek@devfhm.org</a></div>
+  </div>
+
+  <nav class="toc">
+    <h2>İçindekiler</h2>
+    <ol>
+      <li><a href="#giris">Giriş</a></li>
+      <li><a href="#uygulama-hakkinda">Uygulama Hakkında</a></li>
+      <li><a href="#topladigimiz-veriler">Topladığımız Veriler</a></li>
+      <li><a href="#ucuncu-taraf">Üçüncü Taraf Hizmetler</a></li>
+      <li><a href="#reklamlar">Reklamlar ve Reklam Kişiselleştirme</a></li>
+      <li><a href="#kullanim-amaci">Verilerin Kullanım Amacı</a></li>
+      <li><a href="#saklama-silme">Veri Saklama ve Silme</a></li>
+      <li><a href="#guvenlik">Veri Güvenliği</a></li>
+      <li><a href="#haklariniz">Haklarınız (KVKK / GDPR)</a></li>
+      <li><a href="#cocuklar">Çocukların Gizliliği</a></li>
+      <li><a href="#izinler">Uygulama İzinleri</a></li>
+      <li><a href="#degisiklikler">Politika Değişiklikleri</a></li>
+      <li><a href="#iletisim">İletişim</a></li>
+    </ol>
+  </nav>
+
+  <section id="giris">
+    <h2>1. Giriş</h2>
+    <p>
+      Bu Gizlilik Politikası, "O mu Bu mu" (bundan sonra "Uygulama" olarak
+      anılacaktır) mobil uygulamasını kullanırken hangi verilerin
+      toplandığını, nasıl kullanıldığını, kimlerle paylaşıldığını ve
+      verileriniz üzerindeki haklarınızı açıklar. Uygulamayı indirip
+      kullanarak bu politikada açıklanan uygulamaları kabul etmiş
+      olursunuz.
+    </p>
+    <p>
+      Uygulama, geliştiricisi <strong>devFhm</strong> tarafından
+      Türkçe dil bilgisi ve kelime yazımı becerilerini geliştirmeye
+      yönelik, tamamen Türkçe arayüzlü bir eğitici kelime oyunu olarak
+      sunulmaktadır.
+    </p>
+  </section>
+
+  <section id="uygulama-hakkinda">
+    <h2>2. Uygulama Hakkında</h2>
+    <p>
+      O mu Bu mu, oyuncuya iki kelime seçeneği (biri doğru yazım, biri
+      yaygın yanlış yazım) sunan, doğru cevabı bulmasını isteyen bir
+      kelime bilgisi oyunudur. Uygulama <strong>hesap oluşturma,
+      giriş yapma veya kişisel bilgi girişi gerektirmez</strong> —
+      doğrudan indirip oynayabilirsiniz.
+    </p>
+  </section>
+
+  <section id="topladigimiz-veriler">
+    <h2>3. Topladığımız Veriler</h2>
+
+    <h3>3.1. Doğrudan Bizim Topladığımız Veriler</h3>
+    <p>
+      Uygulama geliştiricisi olarak, sunucularımızda <strong>hiçbir kişisel
+      veri toplamıyor, saklamıyor veya işlemiyoruz</strong>. Uygulama
+      herhangi bir kimlik bilgisi, e-posta adresi, telefon numarası,
+      konum bilgisi ya da benzeri kişisel veri talep etmez.
+    </p>
+
+    <h3>3.2. Cihazınızda Yerel Olarak Saklanan Veriler</h3>
+    <p>
+      Oyun deneyiminizin (ilerlemenizin) korunabilmesi için aşağıdaki
+      veriler <strong>yalnızca kendi cihazınızda</strong>, yerel bir
+      veritabanında (Hive) saklanır ve <strong>hiçbir sunucuya
+      gönderilmez</strong>:
+    </p>
+    <ul class="pill-list">
+      <li><b>Oyun ilerlemesi:</b> hangi seviyede/seansta olduğunuz, mevcut soru sırası, skor bilgileri.</li>
+      <li><b>Yanlış bilinen kelimeler listesi:</b> tekrar çalışma turlarını yönetmek için.</li>
+      <li><b>İstatistikler:</b> toplam çözülen soru sayısı, en yüksek kombo, harf bazlı başarı oranları.</li>
+      <li><b>Uygulama ayarları:</b> örneğin uygulama içi değerlendirme penceresinin daha önce gösterilip gösterilmediği bilgisi.</li>
+    </ul>
+    <p>
+      Bu veriler uygulamayı kaldırdığınızda (cihazınızdan sildiğinizde)
+      cihazınızdan tamamen silinir. Uygulama içindeki "Yeniden Başla"
+      seçeneği de bu verileri sıfırlar.
+    </p>
+
+    <h3>3.3. Otomatik Olarak Toplanan Teknik Veriler</h3>
+    <p>
+      Uygulama, gerçek bir internet bağlantısı olup olmadığını kontrol
+      etmek amacıyla arka planda basit bir ağ erişilebilirlik testi
+      (DNS sorgusu) yapar. Bu işlem sırasında kişisel veri
+      toplanmaz veya kaydedilmez; yalnızca "bağlantı var/yok" bilgisi
+      anlık olarak kullanılır.
+    </p>
+  </section>
+
+  <section id="ucuncu-taraf">
+    <h2>4. Üçüncü Taraf Hizmetler</h2>
+    <p>
+      Uygulama, işlevlerini sağlayabilmek için aşağıdaki üçüncü taraf
+      hizmetlerini kullanır. Bu hizmetler kendi gizlilik politikalarına
+      tabidir ve kendi veri işleme faaliyetlerinden kendileri
+      sorumludur.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Hizmet</th>
+          <th>Amaç</th>
+          <th>Toplanabilecek Veri Türleri</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Google AdMob</strong><br>(Google Mobile Ads SDK)</td>
+          <td>Uygulama içinde geçiş (interstitial) reklamlarının gösterilmesi</td>
+          <td>Reklam kimliği (Advertising ID), cihaz bilgileri, yaklaşık konum, IP adresi, uygulama etkileşim verileri</td>
+        </tr>
+        <tr>
+          <td><strong>Google Play Hizmetleri</strong><br>(In-App Review API)</td>
+          <td>Uygulama içi değerlendirme penceresinin gösterilmesi</td>
+          <td>Google Play hesap bilgileri (Google tarafından yönetilir, bize aktarılmaz)</td>
+        </tr>
+        <tr>
+          <td><strong>Google Play Store</strong></td>
+          <td>Uygulamanın dağıtımı, güncellemeler</td>
+          <td>Google'ın kendi gizlilik politikasına tabidir</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Google'ın veri işleme uygulamaları hakkında detaylı bilgi için
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a>
+      ve
+      <a href="https://www.google.com/policies/technologies/ads/" target="_blank" rel="noopener">Google Reklam Teknolojileri</a>
+      sayfalarını inceleyebilirsiniz.
+    </p>
+
+    <div class="callout">
+      <strong>Önemli not</strong>
+      Uygulama, Google AdMob veya Google Play dışında hiçbir analiz
+      (analytics), reklam ağı veya izleme (tracking) SDK'sı
+      kullanmamaktadır.
+    </div>
+  </section>
+
+  <section id="reklamlar">
+    <h2>5. Reklamlar ve Reklam Kişiselleştirme</h2>
+    <p>
+      Uygulama, gelirini sürdürebilmek için Google AdMob aracılığıyla
+      her seviye (10 soruluk seans) tamamlandığında bir geçiş reklamı
+      gösterir. Bu reklamlar Google tarafından sağlanır ve
+      gösterilmeleri sırasında cihazınıza ait reklam kimliği gibi
+      bilgiler Google ile paylaşılabilir.
+    </p>
+    <h3>Reklam kişiselleştirmeyi nasıl kontrol edebilirsiniz?</h3>
+    <p>Android cihazınızda reklam kişiselleştirmeyi kısıtlamak için:</p>
+    <ol>
+      <li>Cihazınızda <strong>Ayarlar</strong> uygulamasını açın.</li>
+      <li><strong>Google</strong> → <strong>Reklamlar</strong> bölümüne gidin.</li>
+      <li>"Reklam Kişiselleştirmeyi Devre Dışı Bırak" seçeneğini
+        etkinleştirin ya da reklam kimliğinizi sıfırlayın.</li>
+    </ol>
+    <p>
+      Bu ayar, reklamların tamamen kaldırılmasını sağlamaz; sadece
+      gösterilen reklamların ilgi alanlarınıza göre kişiselleştirilmesini
+      engeller.
+    </p>
+  </section>
+
+  <section id="kullanim-amaci">
+    <h2>6. Verilerin Kullanım Amacı</h2>
+    <p>Toplanan (yerel ya da üçüncü taraf aracılığıyla işlenen) veriler yalnızca şu amaçlarla kullanılır:</p>
+    <ul>
+      <li>Oyun ilerlemenizin cihazınızda korunması ve kaldığınız yerden devam edebilmeniz</li>
+      <li>Uygulamanın temel gelir modelini oluşturan reklamların gösterilmesi</li>
+      <li>Uygulama içi değerlendirme özelliğinin (bir kez, ilk seviye sonrası) çalıştırılması</li>
+      <li>Uygulamanın kararlılığının ve internet bağlantısı gerektiren özelliklerinin (ör. reklam gösterimi) doğru çalışmasının sağlanması</li>
+    </ul>
+    <p>Veriler; pazarlama, profil oluşturma, üçüncü taraflara satış ya da uygulama dışı hiçbir amaçla kullanılmaz.</p>
+  </section>
+
+  <section id="saklama-silme">
+    <h2>7. Veri Saklama ve Silme</h2>
+    <p>
+      Cihazınızda yerel olarak saklanan tüm oyun verileri (bkz. Bölüm
+      3.2), siz aşağıdaki işlemlerden birini yapana kadar cihazınızda
+      kalır:
+    </p>
+    <ul>
+      <li>Uygulama içindeki <strong>"Yeniden Başla"</strong> seçeneğini kullanmanız,</li>
+      <li>Cihazınızın ayarlarından uygulamanın verilerini/önbelleğini temizlemeniz,</li>
+      <li>Uygulamayı cihazınızdan kaldırmanız (silmeniz).</li>
+    </ul>
+    <p>
+      Bu verilerin hiçbiri bizim ya da üçüncü bir tarafın sunucularında
+      yedeklenmez; sadece sizin cihazınızda bulunur.
+    </p>
+  </section>
+
+  <section id="guvenlik">
+    <h2>8. Veri Güvenliği</h2>
+    <p>
+      Uygulama verileriniz cihazınızın işletim sistemi tarafından
+      sağlanan standart uygulama korumaları (sandboxing) içinde,
+      sadece uygulamanın kendisinin erişebileceği şekilde saklanır.
+      İnternet üzerinden bizim sunucularımıza veri aktarımı
+      yapılmadığından, bu veriler ağ üzerinden ele geçirilme riski
+      taşımaz.
+    </p>
+  </section>
+
+  <section id="haklariniz">
+    <h2>9. Haklarınız</h2>
+    <p>
+      6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve
+      geçerli olduğu ölçüde Avrupa Birliği Genel Veri Koruma Tüzüğü
+      (GDPR) kapsamında, işlenen kişisel verilerinize ilişkin
+      aşağıdaki haklara sahipsiniz:
+    </p>
+    <ul>
+      <li>Verilerinizin işlenip işlenmediğini öğrenme</li>
+      <li>İşlenen veriler hakkında bilgi talep etme</li>
+      <li>Verilerin düzeltilmesini veya silinmesini talep etme</li>
+      <li>Otomatik sistemlerce işlenen verilere itiraz etme</li>
+    </ul>
+    <p>
+      Uygulamanın kendisi kişisel veri toplamadığından, bu haklarınız
+      esasen Google AdMob ve Google Play Hizmetleri tarafından işlenen
+      veriler için geçerlidir; bu hizmetlerdeki verilerinize erişim ve
+      kontrol için doğrudan
+      <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Google Hesabım</a>
+      sayfasını kullanabilirsiniz. Sorularınız için Bölüm 13'teki
+      iletişim bilgilerini de kullanabilirsiniz.
+    </p>
+  </section>
+
+  <section id="cocuklar">
+    <h2>10. Çocukların Gizliliği</h2>
+    <p>
+      Uygulama, genel kitleye yönelik bir eğitici kelime oyunudur ve
+      özellikle 13 yaş altı çocukları hedeflemez. Uygulama, yaşa
+      bakılmaksızın hiçbir kullanıcıdan kişisel veri talep etmez.
+      Ancak, uygulamanın gösterdiği reklamlar Google AdMob altyapısı
+      üzerinden sunulduğundan, uygulamanın çocuklar tarafından
+      kullanıldığını tespit ederseniz veya bir çocuğun bu uygulamayı
+      kişisel veri sağlayarak kullandığını düşünüyorsanız, lütfen
+      Bölüm 13'teki iletişim adresinden bizimle iletişime geçin; ilgili
+      durumu inceleyip gerekli adımları atacağız.
+    </p>
+  </section>
+
+  <section id="izinler">
+    <h2>11. Uygulama İzinleri</h2>
+    <p>Uygulama, Android işletim sisteminden yalnızca aşağıdaki izinleri talep eder:</p>
+    <table>
+      <thead>
+        <tr><th>İzin</th><th>Neden Gerekli</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>INTERNET</code></td>
+          <td>Reklamların yüklenip gösterilmesi ve gerçek internet bağlantısının kontrol edilmesi için</td>
+        </tr>
+        <tr>
+          <td><code>ACCESS_NETWORK_STATE</code></td>
+          <td>Reklam SDK'sının ağ durumu bilgisine erişimi için</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Uygulama; konum, kamera, mikrofon, kişiler, dosyalar/depolama,
+      SMS ya da telefon gibi hassas izinlerin <strong>hiçbirini talep
+      etmez.</strong>
+    </p>
+  </section>
+
+  <section id="degisiklikler">
+    <h2>12. Politika Değişiklikleri</h2>
+    <p>
+      Bu Gizlilik Politikası zaman zaman güncellenebilir. Önemli
+      değişiklikler olması durumunda, güncellenmiş politika bu sayfada
+      yayımlanacak ve sayfanın en üstündeki "Yürürlük tarihi" ilgili
+      şekilde güncellenecektir. Uygulamayı kullanmaya devam etmeniz,
+      güncellenmiş politikayı kabul ettiğiniz anlamına gelir.
+    </p>
+  </section>
+
+  <section id="iletisim">
+    <h2>13. İletişim</h2>
+    <p>
+      Bu Gizlilik Politikası hakkında sorularınız, talepleriniz ya da
+      geri bildirimleriniz için bizimle iletişime geçebilirsiniz:
+    </p>
+    <div class="contact-card">
+      <div><strong>Geliştirici:</strong> devFhm</div>
+      <div><strong>E-posta:</strong> <a href="mailto:destek@devfhm.org">destek@devfhm.org</a></div>
+      <div><strong>Website:</strong> <a href="https://www.devfhm.org" target="_blank" rel="noopener">www.devfhm.org</a></div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 devFhm — O mu Bu mu. Tüm hakları saklıdır.
+  </footer>
+
+</div>
+</body>
+</html>
