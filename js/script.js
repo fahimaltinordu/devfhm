@@ -123,6 +123,23 @@ const APPS = [
     ],
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.devfhm.kelimebaz"
   },
+  {
+    id: "app-08",
+    name: "O mu Bu mu",
+    tag1: "Kelime",
+    tag2: "Eğitim",
+    color: "#ea1d3c",
+    tagline: "Türkçe yazım hatalarını eğlenerek öğren: O mu Bu mu, doğrusunu bul!",
+    description: "O mu Bu mu, günlük hayatta en sık karıştırılan Türkçe kelimeleri eğlenceli bir oyun formatında öğretir. Her soruda karşınıza iki kelime çıkar — biri doğru yazım, diğeri yaygın yapılan yanlış yazım. Göreviniz basit: doğrusunu bulmak!",
+    icon: "assets/apps/app-08.png",
+    screenshots: [
+      "assets/screenshots/app-08-1.jpg",
+      "assets/screenshots/app-08-2.jpg",
+      "assets/screenshots/app-08-3.jpg",
+      "assets/screenshots/app-08-4.jpg"
+    ],
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.devfhm.omubumu"
+  },
 ];
 
 /* Her uygulama "color" alanıyla kendi vurgu rengini taşır.
