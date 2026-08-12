@@ -140,6 +140,23 @@ const APPS = [
     ],
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.devfhm.omubumu"
   },
+  {
+    id: "app-09",
+    name: "Pathify",
+    tag1: "Puzzle",
+    tag2: "Zeka oyunları",
+    color: "#e85f4d",
+    tagline: "🧩 Pathify — Sayıları Sırayla Birleştir, Her Kareyi Boya!",
+    description: "Zihnini tazelemek, kısa molalarda eğlenmek ya da sırayla düşünme becerini geliştirmek için Pathify tam sana göre. Hemen indir, ilk düğümü çöz!",
+    icon: "assets/apps/app-09.png",
+    screenshots: [
+      "assets/screenshots/app-09-1.jpg",
+      "assets/screenshots/app-09-2.jpg",
+      "assets/screenshots/app-09-3.jpg",
+      "assets/screenshots/app-09-4.jpg"
+    ],
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.devfhm.pathify"
+  },
 ];
 
 /* Her uygulama "color" alanıyla kendi vurgu rengini taşır.
