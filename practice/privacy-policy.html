@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gizlilik Politikası — Practice</title>
+<style>
+  :root {
+    --bg: #FCFCFA;
+    --card: #FFFFFF;
+    --accent: #6C63FF;
+    --accent-dark: #3F3D9E;
+    --text: #2C2C2C;
+    --text-muted: #6b6b6b;
+    --border: #ECECE6;
+    --amber: #C98A1E;
+    --amber-bg: #FFF6DD;
+    --green: #2ECC71;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.65;
+    font-size: 16px;
+  }
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+  header.hero {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .logo-badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 26px;
+    flex-shrink: 0;
+    box-shadow: 0 6px 16px rgba(108,99,255,0.25);
+  }
+  h1 { font-size: 26px; margin: 0 0 4px; }
+  .subtitle { color: var(--text-muted); font-size: 14px; margin: 0; }
+  .updated-badge {
+    display: inline-block;
+    margin-top: 18px;
+    background: var(--amber-bg);
+    color: var(--amber);
+    border: 1px solid #E9C441;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12.5px;
+    font-weight: 600;
+  }
+  .summary-card {
+    margin-top: 26px;
+    background: var(--card);
+    border-radius: 20px;
+    padding: 22px 24px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  }
+  .summary-card h2 {
+    font-size: 15px;
+    margin: 0 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+  }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  @media (max-width: 560px) {
+    .summary-grid { grid-template-columns: 1fr; }
+  }
+  .summary-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13.5px;
+    padding: 10px 12px;
+    background: #F7F9F5;
+    border-radius: 12px;
+  }
+  .summary-item .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--green);
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  nav.toc {
+    margin-top: 26px;
+    background: var(--card);
+    border-radius: 20px;
+    padding: 20px 24px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  }
+  nav.toc h2 { font-size: 14px; margin: 0 0 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;}
+  nav.toc ol { margin: 0; padding-left: 20px; columns: 2; font-size: 13.5px; }
+  @media (max-width: 560px) { nav.toc ol { columns: 1; } }
+  nav.toc a { color: var(--accent-dark); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+
+  section {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 26px 28px;
+    margin-top: 18px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+    scroll-margin-top: 20px;
+  }
+  section h2 {
+    font-size: 18px;
+    margin: 0 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  section h2 .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px; height: 26px;
+    background: var(--accent);
+    color: white;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  section h3 { font-size: 15px; margin: 18px 0 6px; color: var(--text); }
+  p { margin: 0 0 12px; color: #3a3a3a; }
+  ul, ol.list { margin: 0 0 12px; padding-left: 22px; }
+  li { margin-bottom: 6px; color: #3a3a3a; }
+  strong { color: var(--text); }
+  a.link { color: var(--accent-dark); font-weight: 600; text-decoration: none; }
+  a.link:hover { text-decoration: underline; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 16px;
+    font-size: 13.5px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th { color: var(--text-muted); font-weight: 600; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.3px; }
+
+  .badge {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 8px;
+    margin-right: 6px;
+  }
+  .badge.local { background: rgba(46,204,113,0.12); color: #1e8a4c; }
+  .badge.third { background: rgba(230,126,34,0.12); color: #b85c00; }
+  .badge.none { background: rgba(149,165,166,0.15); color: #5f6a6a; }
+
+  .callout {
+    border-left: 4px solid var(--accent);
+    background: #F5F4FF;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 13.5px;
+    color: #3a3a3a;
+    margin: 14px 0;
+  }
+  .callout.warn {
+    border-left-color: var(--amber);
+    background: var(--amber-bg);
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 34px;
+    color: var(--text-muted);
+    font-size: 12.5px;
+  }
+  footer a { color: var(--accent-dark); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="logo-badge">🔒</div>
+    <div>
+      <h1>Gizlilik Politikası</h1>
+      <p class="subtitle">Practice — İngilizce-Türkçe Kelime Öğrenme Uygulaması</p>
+    </div>
+  </header>
+  <span class="updated-badge">Son güncelleme: 23 Ağustos 2026</span>
+
+  <div class="summary-card">
+    <h2>⚡ Kısaca Özet</h2>
+    <div class="summary-grid">
+      <div class="summary-item"><span class="dot"></span> Hesap oluşturmana veya giriş yapmana gerek yok.</div>
+      <div class="summary-item"><span class="dot"></span> Ad, e-posta, telefon gibi kişisel bilgin toplanmıyor.</div>
+      <div class="summary-item"><span class="dot"></span> Öğrenme ilerlemen sadece cihazında saklanır, bize gönderilmez.</div>
+      <div class="summary-item"><span class="dot"></span> Bizim işlettiğimiz hiçbir sunucu/veritabanı yoktur.</div>
+      <div class="summary-item"><span class="dot"></span> Reklamlar Google AdMob üzerinden gösterilir.</div>
+      <div class="summary-item"><span class="dot"></span> Satın alma bilgin tamamen Google Play üzerinden yönetilir.</div>
+    </div>
+  </div>
+
+  <nav class="toc">
+    <h2>İçindekiler</h2>
+    <ol>
+      <li><a href="#giris">Giriş</a></li>
+      <li><a href="#hesap">Hesap ve Kişisel Bilgi</a></li>
+      <li><a href="#cihazda-saklanan">Cihazında Saklanan Veriler</a></li>
+      <li><a href="#bildirimler">Bildirimler</a></li>
+      <li><a href="#reklamlar">Reklamlar (Google AdMob)</a></li>
+      <li><a href="#satin-alma">Satın Almalar (Google Play)</a></li>
+      <li><a href="#telaffuz">Telaffuz Ses Dosyaları</a></li>
+      <li><a href="#izinler">Cihaz İzinleri</a></li>
+      <li><a href="#ucuncu-taraflar">Üçüncü Taraf Hizmetler</a></li>
+      <li><a href="#cocuklar">Çocukların Gizliliği</a></li>
+      <li><a href="#guvenlik">Veri Güvenliği</a></li>
+      <li><a href="#silme">Verilerinin Silinmesi</a></li>
+      <li><a href="#haklar">Yasal Haklarınız</a></li>
+      <li><a href="#degisiklikler">Politika Değişiklikleri</a></li>
+      <li><a href="#iletisim">İletişim</a></li>
+    </ol>
+  </nav>
+
+  <section id="giris">
+    <h2><span class="num">1</span>Giriş</h2>
+    <p>
+      Practice ("uygulama", "biz"), devFhm tarafından geliştirilen, İngilizce kelimeleri
+      Leitner Kutu Sistemi ile tekrar ederek öğrenmene yardımcı olan bir mobil
+      uygulamadır. Bu Gizlilik Politikası, uygulamayı kullanırken hangi verilerin
+      işlendiğini, nasıl saklandığını ve hangi üçüncü taraf hizmetlerin devrede
+      olduğunu <strong>eksiksiz ve şeffaf</strong> şekilde açıklamak için hazırlanmıştır.
+    </p>
+    <p>
+      Uygulamayı indirip kullanarak bu politikayı kabul etmiş olursun. Politikayı
+      anlamıyorsan veya bir sorun varsa, aşağıdaki
+      <a class="link" href="#iletisim">İletişim</a> bölümünden bize ulaşabilirsin.
+    </p>
+  </section>
+
+  <section id="hesap">
+    <h2><span class="num">2</span>Hesap ve Kişisel Bilgi</h2>
+    <span class="badge none">Toplanmıyor</span>
+    <p>
+      Practice, <strong>hesap oluşturmanı veya herhangi bir yere giriş yapmanı
+      GEREKTİRMEZ</strong>. Uygulama içinde:
+    </p>
+    <ul>
+      <li>Ad, soyad, e-posta adresi, telefon numarası <strong>istenmez ve toplanmaz</strong>.</li>
+      <li>Kayıt formu, profil sayfası veya kullanıcı adı/şifre sistemi <strong>yoktur</strong>.</li>
+      <li>Uygulama içinden sosyal medya hesabına bağlanma özelliği <strong>yoktur</strong>.</li>
+    </ul>
+    <p>
+      Bizimle e-posta yoluyla iletişime geçersen (örn. destek talebi), o e-postadaki
+      bilgiler (adresin ve mesaj içeriğin) doğal olarak bize ulaşır — bu, e-posta
+      sağlayıcının (Gmail, Outlook vb.) kendi işleyişinin bir sonucudur ve sadece sana
+      destek sağlamak için kullanılır, başka hiçbir amaçla işlenmez veya üçüncü
+      taraflarla paylaşılmaz.
+    </p>
+  </section>
+
+  <section id="cihazda-saklanan">
+    <h2><span class="num">3</span>Cihazında Saklanan Veriler</h2>
+    <span class="badge local">Sadece cihazında · Bize gönderilmiyor</span>
+    <p>
+      Uygulama, öğrenme deneyimini sürdürebilmek için bazı verileri
+      <strong>yalnızca kendi cihazının yerel deposunda</strong> (Hive adlı yerel
+      veritabanı teknolojisiyle) saklar. Bu veriler:
+    </p>
+    <ul>
+      <li><strong>İnternete hiçbir şekilde gönderilmez</strong> — çünkü uygulamanın
+        işlettiği bir sunucu/backend yoktur.</li>
+      <li>Sadece uygulamanın kendi özel (sandbox'lanmış) depolama alanında tutulur;
+        başka uygulamalar erişemez.</li>
+      <li>Uygulamayı kaldırdığında veya cihaz ayarlarından uygulama verisini
+        temizlediğinde <strong>kalıcı olarak silinir</strong>.</li>
+    </ul>
+    <h3>Neler saklanıyor?</h3>
+    <table>
+      <tr><th>Veri</th><th>Ne için kullanılır</th></tr>
+      <tr>
+        <td>Kelime kartı ilerlemesi (Leitner kutu seviyesi, sonraki tekrar tarihi, öğrenildi mi)</td>
+        <td>Hangi kelimenin ne zaman tekrar karşına çıkacağını hesaplamak için</td>
+      </tr>
+      <tr>
+        <td>Doğru/yanlış bilme sayaçları</td>
+        <td>İstatistikler sekmesinde ilerlemeni sana göstermek için</td>
+      </tr>
+      <tr>
+        <td>Premium satın alma durumu (evet/hayır)</td>
+        <td>Reklamları kapatmak ve Premium özelliklerini açmak için</td>
+      </tr>
+      <tr>
+        <td>Bildirim izni diyaloğunun daha önce gösterilip gösterilmediği bilgisi</td>
+        <td>İzin diyaloğunu sadece bir kez göstermek için</td>
+      </tr>
+    </table>
+    <div class="callout">
+      Bu tablodaki hiçbir veri; adın, e-postan, konumun ya da seni gerçek kimliğinle
+      eşleştirebilecek herhangi bir bilgi <strong>İÇERMEZ</strong>. Tamamen
+      anonim, sadece cihazına özel ilerleme verisidir.
+    </div>
+  </section>
+
+  <section id="bildirimler">
+    <h2><span class="num">4</span>Bildirimler</h2>
+    <span class="badge local">Sadece cihazında</span>
+    <p>
+      Uygulama, izin verirsen günlük "Günün Kelimesi" hatırlatma bildirimi
+      gönderebilir. Bu bildirimler:
+    </p>
+    <ul>
+      <li>Tamamen <strong>cihazının kendi işletim sistemi</strong> tarafından, yerel
+        olarak planlanır ve gösterilir — herhangi bir uzak sunucudan
+        (push notification servisi vb.) <strong>gönderilmez</strong>.</li>
+      <li>Sadece sana ait cihazda çalışır; bildirim gönderip göndermediğimize dair
+        hiçbir bilgi bizim tarafımıza ulaşmaz.</li>
+      <li>İzin vermek tamamen isteğe bağlıdır ve istediğin zaman cihazının
+        Ayarlar &gt; Bildirimler bölümünden kapatılabilir.</li>
+    </ul>
+  </section>
+
+  <section id="reklamlar">
+    <h2><span class="num">5</span>Reklamlar (Google AdMob)</h2>
+    <span class="badge third">Üçüncü taraf veri işleme</span>
+    <p>
+      Ücretsiz kullanıcılar için Öğrenme Modu'nda ara sıra <strong>geçiş
+      (interstitial) reklamları</strong> gösterilir. Bu reklamlar
+      <strong>Google AdMob</strong> altyapısıyla sunulur. Premium satın alan
+      kullanıcılara <strong>hiçbir reklam gösterilmez ve reklam altyapısı hiç
+      başlatılmaz</strong> (bkz. <a class="link" href="#satin-alma">Satın Almalar</a>).
+    </p>
+    <p>
+      Reklam gösterebilmek için Google, cihazınla ilgili bazı teknik verileri
+      (örneğin reklam kimliği/Advertising ID, cihaz modeli, yaklaşık konum, IP adresi,
+      uygulama kullanım verisi) kendi politikaları doğrultusunda işleyebilir. Bu
+      veriler bizim tarafımızdan değil, doğrudan Google tarafından, Google'ın kendi
+      Gizlilik Politikası kapsamında işlenir. Biz bu verilere erişemeyiz ve
+      saklamayız.
+    </p>
+    <ul>
+      <li>Google'ın Gizlilik Politikası:
+        <a class="link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+      <li>Google AdMob'un veri kullanımı hakkında:
+        <a class="link" href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">support.google.com/admob</a></li>
+      <li>Reklam kişiselleştirmesini kapatmak/yönetmek için:
+        <a class="link" href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a></li>
+    </ul>
+  </section>
+
+  <section id="satin-alma">
+    <h2><span class="num">6</span>Satın Almalar (Google Play Billing)</h2>
+    <span class="badge third">Google Play tarafından işlenir</span>
+    <p>
+      Uygulama içi "Premium" satın alma, tek seferlik bir ödemedir ve tamamen
+      <strong>Google Play'in kendi satın alma altyapısı</strong> üzerinden
+      gerçekleştirilir.
+    </p>
+    <ul>
+      <li><strong>Kredi kartı bilgin, ödeme yöntemin veya fatura bilgilerin bize
+        ASLA ulaşmaz</strong> — bunlar tamamen Google Play tarafından, kendi
+        güvenlik standartlarıyla işlenir.</li>
+      <li>Uygulama, Google Play'den sadece "bu satın alma başarılı/başarısız/iptal
+        oldu" şeklinde bir <strong>sonuç bilgisi</strong> alır; bu bilgi cihazında
+        "Premium: evet/hayır" olarak saklanır.</li>
+      <li>Daha önce bu hesapla satın alma yaptıysan, "Satın Almaları Geri Yükle"
+        özelliğiyle Google Play üzerinden bunu tekrar doğrulayabilirsin.</li>
+    </ul>
+    <p>
+      Google Play'in ödeme verilerini nasıl işlediği hakkında bilgi için:
+      <a class="link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a>
+      ve <a class="link" href="https://play.google/intl/tr/play-terms/" target="_blank" rel="noopener">Google Play Hizmet Şartları</a>'nı inceleyebilirsin.
+    </p>
+  </section>
+
+  <section id="telaffuz">
+    <h2><span class="num">7</span>Telaffuz Ses Dosyaları</h2>
+    <span class="badge third">Üçüncü taraf sunucudan yükleniyor</span>
+    <p>
+      Sözlük ve kelime kartlarındaki "telaffuzu dinle" butonuna bastığında,
+      ses dosyası <strong>Oxford Learner's Dictionaries</strong> altyapısında
+      barındırılan uzak bir adresten (mp3 dosyası) internetten çalınır.
+    </p>
+    <ul>
+      <li>Bu istek sırasında, herhangi bir internet isteğinde olduğu gibi, IP adresin
+        ve istek zamanı bu dosyayı barındıran sunucuya (Oxford Learner's
+        Dictionaries) teknik olarak iletilir. Bu, o servisin kendi altyapısının
+        doğal bir sonucudur ve bizim kontrolümüz dışındadır.</li>
+      <li>Bu özelliği kullanmazsan (telaffuz butonuna basmazsan) bu istek hiç
+        gerçekleşmez.</li>
+      <li>İnternet yoksa veya ses dosyasına erişilemezse, uygulama sessizce
+        (çökmeden) bir uyarı gösterir; herhangi bir veri kaybı ya da hata riski
+        yoktur.</li>
+    </ul>
+  </section>
+
+  <section id="izinler">
+    <h2><span class="num">8</span>Cihaz İzinleri</h2>
+    <p>Uygulama, Android'de sadece aşağıdaki izinleri talep eder — hepsi doğrudan
+      uygulamanın temel özellikleriyle ilgilidir; konum, kişiler, kamera, mikrofon
+      veya depolama gibi hassas bir izin <strong>istenmez</strong>.</p>
+    <table>
+      <tr><th>İzin</th><th>Neden gerekli</th></tr>
+      <tr><td><code>INTERNET</code></td><td>Reklam gösterimi, satın alma doğrulaması ve telaffuz seslerinin çalınabilmesi için</td></tr>
+      <tr><td><code>POST_NOTIFICATIONS</code></td><td>"Günün Kelimesi" hatırlatma bildirimini gösterebilmek için (isteğe bağlı, izin vermezsen bildirim gelmez)</td></tr>
+      <tr><td><code>SCHEDULE_EXACT_ALARM</code> / <code>USE_EXACT_ALARM</code></td><td>Günlük bildirimin tam istenen saatte (örn. 09:00) tetiklenebilmesi için</td></tr>
+      <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Telefon yeniden başlatıldığında planlanmış bildirimlerin kaybolmaması için</td></tr>
+    </table>
+  </section>
+
+  <section id="ucuncu-taraflar">
+    <h2><span class="num">9</span>Üçüncü Taraf Hizmetler — Özet Liste</h2>
+    <p>Uygulamada kullanılan tüm üçüncü taraf hizmetler, başka hiçbir gizli
+      entegrasyon olmadan aşağıda eksiksiz listelenmiştir:</p>
+    <table>
+      <tr><th>Hizmet</th><th>Amaç</th><th>Politika</th></tr>
+      <tr>
+        <td>Google AdMob</td>
+        <td>Geçiş reklamlarının gösterilmesi</td>
+        <td><a class="link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a></td>
+      </tr>
+      <tr>
+        <td>Google Play Billing (in-app purchase)</td>
+        <td>Premium satın alma işlemlerinin gerçekleştirilmesi</td>
+        <td><a class="link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a></td>
+      </tr>
+      <tr>
+        <td>Oxford Learner's Dictionaries</td>
+        <td>Kelime telaffuz ses dosyalarının barındırılması</td>
+        <td>Kendi sağlayıcısının politikalarına tabidir</td>
+      </tr>
+    </table>
+    <p>Bunların dışında, uygulama <strong>hiçbir analytics (kullanım analizi),
+      crash-reporting (çökme raporlama) veya reklam takip SDK'sı içermez</strong> —
+      örneğin Firebase Analytics, Crashlytics veya benzeri bir üçüncü taraf takip
+      aracı kullanılmamaktadır.</p>
+  </section>
+
+  <section id="cocuklar">
+    <h2><span class="num">10</span>Çocukların Gizliliği</h2>
+    <p>
+      Practice, genel kitleye yönelik bir dil öğrenme uygulamasıdır ve bilerek
+      13 yaş altı çocuklardan kişisel veri toplamaz (zaten hiçbir kullanıcıdan
+      kişisel veri toplanmamaktadır — bkz. <a class="link" href="#hesap">Bölüm 2</a>).
+      Uygulamada reklam gösterildiği için, ebeveynlerin çocuklarının uygulama
+      kullanımını kendi takdirlerine göre denetlemelerini öneririz. Çocuğunun bu
+      uygulamayla etkileşime girdiğini ve bir gizlilik endişen olduğunu düşünüyorsan,
+      <a class="link" href="#iletisim">bizimle iletişime geç</a>.
+    </p>
+  </section>
+
+  <section id="guvenlik">
+    <h2><span class="num">11</span>Veri Güvenliği</h2>
+    <p>
+      Uygulamanın işlettiği bir sunucu/veritabanı olmadığı için, "sunucu tarafında
+      veri sızıntısı" riski yapısal olarak <strong>yoktur</strong>. Cihazında
+      saklanan veriler, Android işletim sisteminin standart uygulama korumasıyla
+      (her uygulamanın kendi izole depolama alanı) korunur; bu alana başka bir
+      uygulama normal şartlarda erişemez.
+    </p>
+  </section>
+
+  <section id="silme">
+    <h2><span class="num">12</span>Verilerinin Silinmesi</h2>
+    <p>Cihazında saklanan tüm ilerleme verisini kalıcı olarak silmek için:</p>
+    <ol class="list">
+      <li>Uygulamayı cihazından kaldırabilirsin (bu, tüm yerel veriyi otomatik siler), <strong>veya</strong></li>
+      <li>Android Ayarlar &gt; Uygulamalar &gt; Practice &gt; Depolama &gt; "Verileri Temizle" yolunu izleyebilirsin.</li>
+    </ol>
+    <p>
+      Reklam kişiselleştirme verilerinin (Google tarafında tutulan) silinmesi için
+      <a class="link" href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Google Hesabım</a>
+      üzerinden kendi Google hesap ayarlarını yönetebilirsin. Satın alma geçmişini
+      Google Play Store &gt; Hesap &gt; Ödemeler ve abonelikler bölümünden görüntüleyebilirsin.
+    </p>
+  </section>
+
+  <section id="haklar">
+    <h2><span class="num">13</span>Yasal Haklarınız</h2>
+    <p>
+      GDPR (AB/EEA), KVKK (Türkiye) veya benzeri veri koruma mevzuatları kapsamında
+      kişisel verilere erişim, düzeltme ve silme talep etme hakkına sahipsin. Ancak
+      uygulama tarafımızdan <strong>hiçbir kişisel veri toplanıp saklanmadığı</strong>
+      için (bkz. <a class="link" href="#hesap">Bölüm 2</a>), bize yönelik bir "verimi
+      sil/göster" talebinde bulunmana teknik olarak gerek kalmaz — cihazındaki
+      veriler zaten tamamen senin kontrolünde ve senin cihazındadır (bkz.
+      <a class="link" href="#silme">Bölüm 12</a>).
+    </p>
+    <p>
+      Reklam (Google AdMob) ve satın alma (Google Play) verilerine ilişkin haklarını
+      kullanmak için doğrudan Google'ın ilgili araçlarını (yukarıda linklenmiştir)
+      kullanabilir veya Google'a başvurabilirsin, çünkü bu veriler bizim değil
+      Google'ın veri sorumluluğu kapsamındadır.
+    </p>
+  </section>
+
+  <section id="degisiklikler">
+    <h2><span class="num">14</span>Politika Değişiklikleri</h2>
+    <p>
+      Bu politikayı zaman zaman güncelleyebiliriz (örneğin yeni bir özellik
+      eklendiğinde). Önemli değişikliklerde sayfanın en üstündeki "Son güncelleme"
+      tarihini güncelleriz. Uygulamayı kullanmaya devam etmen, güncellenmiş
+      politikayı kabul ettiğin anlamına gelir.
+    </p>
+  </section>
+
+  <section id="iletisim">
+    <h2><span class="num">15</span>İletişim</h2>
+    <p>
+      Bu Gizlilik Politikası hakkında sorunun varsa veya bir talepte bulunmak
+      istersen, bize aşağıdan ulaşabilirsin:
+    </p>
+    <ul>
+      <li>E-posta: <a class="link" href="mailto:destek@devfhm.org">destek@devfhm.org</a></li>
+      <li>Web sitesi: <a class="link" href="https://www.devfhm.org" target="_blank" rel="noopener">www.devfhm.org</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    Practice · devFhm tarafından geliştirildi<br>
+    Bu belge, en son 23 Ağustos 2026 tarihinde güncellenmiştir.
+  </footer>
+
+</div>
+</body>
+</html>
